@@ -7,7 +7,10 @@ go:
 - tip
 sudo: false
 
+go_import_path: github.com/dolmen-go/semver
+
 before_install:
+- go list
 - go get -t -v ./...
 
 script:
