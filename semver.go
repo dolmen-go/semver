@@ -113,6 +113,18 @@ func (v *Version) Set(str string) error {
 	return nil
 }
 
+func (v Version) NextMajor() Version {
+	return Version{v.major + 1, 0, 0}
+}
+
+func (v Version) NextMinor() Version {
+	return Version{v.major, v.minor + 1, 0}
+}
+
+func (v Version) NextPatch() Version {
+	return Version{v.major, v.minor, v.patch + 1}
+}
+
 type Major uint
 
 func (m Major) String() string {

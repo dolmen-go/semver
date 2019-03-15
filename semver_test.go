@@ -41,3 +41,21 @@ func ExampleVersion_Major() {
 	// Output:
 	// v1.2.3 major: string:"v1" int:1
 }
+
+func ExampleVersion_NextMajor() {
+	fmt.Println(semver.V(1, 2, 3).NextMajor())
+	// Output:
+	// v2.0.0
+}
+
+func ExampleVersion_NextMinor() {
+	fmt.Println(semver.V(1, 2, 3).NextMinor())
+	// Output:
+	// v1.3.0
+}
+
+func ExampleVersion_NextPatch() {
+	fmt.Println(semver.V(1, 2, 3).NextPatch())
+	// Output:
+	// v1.2.4
+}
